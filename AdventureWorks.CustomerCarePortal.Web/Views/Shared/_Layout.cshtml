@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]  Adventure Works</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AdventureWorks.CustomerCarePortal.Web.styles.css" asp-append-version="true" />
+
+
+
+
+
 </head>
 <body>
     @*NavBar*@
@@ -19,7 +25,7 @@
             @*SideBar*@
             @await Html.PartialAsync("~/Views/Shared/_SideBar.cshtml")
             @*SideBar*@
-            <main role="main" class="pb-3 col-9 ">
+            <main role="main" class="pb-3 col-7 offset-1">
                 @RenderBody()
             </main>
         </div>
@@ -30,8 +36,10 @@
             &copy; 2022 - AdventureWorks - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    @*TODO: Scope js to views*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

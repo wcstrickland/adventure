@@ -37,4 +37,14 @@ for (let i = 0; i < removeCustomerBtns.length; i++) {
         selected.remove()
     });
 }
+$(document).ready(function () {
+    $('#example').DataTable({
+        "lengthMenu":[25]
+    });
+});
 
+let customerSearchButton = document.getElementById("search-customers-button")
+
+customerSearchButton.addEventListener("click", () => {
+    alert("Customer Not Found")
+})
