@@ -44,7 +44,7 @@
                         <span class="fs-5 fw-semibold">Customers</span>
                     </a>
                     <div id="customer-list-group" class="list-group list-group-flush border-bottom scrollarea">
-                        <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm justify-content-between" aria-current="true">
+                        <a href="#" class="list-group-item  customer-list-group-item list-group-item-action active py-3 lh-sm justify-content-between" aria-current="true">
                             <div class="row">
                                 <div class="col-1 offset-10">
                                     <small class="customer-list-closeButton">&#10060;</small>
@@ -57,7 +57,7 @@
                         </a>
                         @for(int i = 0; i < @customers.Count - 1; i++)
                         {
-                            <a href="#" id=@($"list-group-item-{i}") class="list-group-item list-group-item-action  py-3 lh-sm justify-content-between" aria-current="true">
+                            <a href="#" id=@($"list-group-item-{i}") class="list-group-item  customer-list-group-item list-group-item-action  py-3 lh-sm justify-content-between" aria-current="true">
                                 <div class="row">
                                     <div class="col-1 offset-10">
                                         <small class="customer-list-closeButton">&#10060;</small>
