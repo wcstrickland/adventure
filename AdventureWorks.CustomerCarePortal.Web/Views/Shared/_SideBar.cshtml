@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List<string> customers = new() { "bob jones", "terry albier", "sarah vaughn", "pat morris", "stefan aluez", "jack horsey", "stacy gwen", "peter parker", "calahan fangs" };
+    Random rnd = new Random();
+
+}
+@*SideBar*@
+<div class="col-3">
+    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
+        <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+            <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-5 fw-semibold">Customers</span>
+        </a>
+        <div id="customer-list-group" class="list-group list-group-flush border-bottom scrollarea">
+            <a href="#" class="list-group-item  customer-list-group-item list-group-item-action active py-3 lh-sm justify-content-between" aria-current="true">
+                <div class="row">
+                    <div class="col-1 offset-10">
+                        <small class="customer-list-closeButton">&#10060;</small>
+                    </div>
+                </div>
+                <div class="row mr-5 mt-1">
+                    <div class="col-5">Default Customer</div>
+                    <div class="col-1 offset-5">84</div>
+                </div>
+            </a>
+            @for (int i = 0; i < @customers.Count - 1; i++)
+            {
+                <a href="#" id=@($"list-group-item-{i}") class="list-group-item  customer-list-group-item list-group-item-action  py-3 lh-sm justify-content-between" aria-current="true">
+                    <div class="row">
+                        <div class="col-1 offset-10">
+                            <small class="customer-list-closeButton">&#10060;</small>
+                        </div>
+                    </div>
+                    <div class="row mr-5 mt-1">
+                        <div class="col-5">@customers[i]</div>
+                        <div class="col-1 offset-5">@rnd.Next(99)</div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>
+@*SideBar*@

@@ -1,6 +1,4 @@
 ﻿@{
-    List<string> customers = new() { "bob jones", "terry albier", "sarah vaughn", "pat morris", "stefan aluez", "jack horsey", "stacy gwen", "peter parker", "calahan fangs" };
-    Random rnd = new Random();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -13,65 +11,13 @@
     <link rel="stylesheet" href="~/AdventureWorks.CustomerCarePortal.Web.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Adventure Works</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div id="main" class="container-fluid" >
-        <div class="row" >
+    @*NavBar*@
+    @await Html.PartialAsync("~/Views/Shared/_NavBar.cshtml")
+    @*NavBar*@
+    <div id="main" class="container-fluid">
+        <div class="row">
             @*SideBar*@
-            <div class="col-3">
-                <div  class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
-                    <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
-                        <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                        <span class="fs-5 fw-semibold">Customers</span>
-                    </a>
-                    <div id="customer-list-group" class="list-group list-group-flush border-bottom scrollarea">
-                        <a href="#" class="list-group-item  customer-list-group-item list-group-item-action active py-3 lh-sm justify-content-between" aria-current="true">
-                            <div class="row">
-                                <div class="col-1 offset-10">
-                                    <small class="customer-list-closeButton">&#10060;</small>
-                                </div>
-                            </div>
-                            <div class="row mr-5 mt-1">
-                                <div class="col-5">Default Customer</div>
-                                <div class="col-1 offset-5">84</div>
-                            </div>
-                        </a>
-                        @for(int i = 0; i < @customers.Count - 1; i++)
-                        {
-                            <a href="#" id=@($"list-group-item-{i}") class="list-group-item  customer-list-group-item list-group-item-action  py-3 lh-sm justify-content-between" aria-current="true">
-                                <div class="row">
-                                    <div class="col-1 offset-10">
-                                        <small class="customer-list-closeButton">&#10060;</small>
-                                    </div>
-                                </div>
-                                <div class="row mr-5 mt-1">
-                                    <div class="col-5">@customers[i]</div>
-                                    <div class="col-1 offset-5">@rnd.Next(99)</div>
-                                </div>
-                            </a>
-                        }
-                    </div>
-                </div>
-            </div>
+            @await Html.PartialAsync("~/Views/Shared/_SideBar.cshtml")
             @*SideBar*@
             <main role="main" class="pb-3 col-9 ">
                 @RenderBody()
@@ -81,7 +27,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - AdventureWorks.CustomerCarePortal.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - AdventureWorks - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
