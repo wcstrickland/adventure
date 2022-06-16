@@ -26,5 +26,9 @@ body {
     color:#dc3545 ;
 }
 
+.customer-list-group-item{
+    border-radius:10px;
+}
+
 
 
