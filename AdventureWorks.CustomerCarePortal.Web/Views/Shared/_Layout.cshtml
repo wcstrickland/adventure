@@ -51,23 +51,23 @@
                                 </div>
                             </div>
                             <div class="row mr-5 mt-1">
-                                <div class="col-5">Clarence Knots</div>
+                                <div class="col-5">Default Customer</div>
                                 <div class="col-1 offset-5">84</div>
                             </div>
                         </a>
-                        @foreach (var customer in customers)
+                        @for(int i = 0; i < @customers.Count - 1; i++)
                         {
-                        <a href="#" class="list-group-item list-group-item-action  py-3 lh-sm justify-content-between" aria-current="true">
-                            <div class="row">
-                                <div class="col-1 offset-10">
-                                    <small class="customer-list-closeButton">&#10060;</small>
+                            <a href="#" id=@($"list-group-item-{i}") class="list-group-item list-group-item-action  py-3 lh-sm justify-content-between" aria-current="true">
+                                <div class="row">
+                                    <div class="col-1 offset-10">
+                                        <small class="customer-list-closeButton">&#10060;</small>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mr-5 mt-1">
-                                <div class="col-5">@customer</div>
-                                <div class="col-1 offset-5">@rnd.Next(99)</div>
-                            </div>
-                        </a>
+                                <div class="row mr-5 mt-1">
+                                    <div class="col-5">@customers[i]</div>
+                                    <div class="col-1 offset-5">@rnd.Next(99)</div>
+                                </div>
+                            </a>
                         }
                     </div>
                 </div>
