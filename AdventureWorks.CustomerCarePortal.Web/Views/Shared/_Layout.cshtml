@@ -10,27 +10,21 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AdventureWorks.CustomerCarePortal.Web.styles.css" asp-append-version="true" />
-
-
-
-
-
 </head>
 <body>
-    @*NavBar*@
+    <!--Nab Bar-->
     @await Html.PartialAsync("~/Views/Shared/_NavBar.cshtml")
-    @*NavBar*@
+    <!--Nab Bar-->
     <div id="main" class="container-fluid">
         <div class="row">
-            @*SideBar*@
+            <!--Side Bar-->
             @await Html.PartialAsync("~/Views/Shared/_SideBar.cshtml")
-            @*SideBar*@
+            <!--Side Bar-->
             <main role="main" class="pb-3 col-7 ms-5">
                 @RenderBody()
             </main>
         </div>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - AdventureWorks - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

@@ -1,5 +1,4 @@
 ﻿@{
-
     ViewData["Title"] = "Order Details";
     var Modil = new { id = 100, fName = "john", lName = "public", email = "john.q.public@gmail.com", rewardLevel = "gold", addressNum = 6423, street = "wall St", city = "mobile", state = "AL", zip = "35126-1234", phoneNumber = "555-555-5555" };
     var Shrt = new { desc = "blue shirt", category = "apparel", price = 45.99, discount = 3 };
@@ -7,9 +6,7 @@
     var Chn = new { desc = "Bike Chain", category = "parts", price = 45.99, discount = 3 };
     var Ordr = new { customer = Modil, orderDate = "1.28.2021", trackingNum = "32456241", orderNum = "2344-2344-1233", items = new List<object> { Shrt, Pmp, Chn } };
 }
-
 <div id="order-details-main">
-
     <div class="row">
         <div class="col-1 offset-7">
             <h4><a href="#">Edit</a></h4>
@@ -89,7 +86,6 @@
         </div>
     </div>
     <!--end row-->
-
     <div class="row">
         <div class="col-10 offset-1">
             @for (var i = 0; i < 5; i++)
@@ -118,7 +114,6 @@
         </div>
     </div>
     <!--end row-->
-
     <div class="row">
         <div class="col-6 offset-2">
             <div class="row pb-3 border-bottom">
@@ -160,6 +155,5 @@
         </div>
     <!--endrow-->
     </div>
-
     <!--end main-->
 </div>
