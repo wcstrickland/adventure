@@ -5,7 +5,7 @@ let customerBtnContainer = document.getElementById("customer-list-group");
 let customerBtns = customerBtnContainer.getElementsByClassName("list-group-item");
 // Loop through the buttons and add the active class to the current/clicked button
 for (let i = 0; i < customerBtns.length; i++) {
-    customerBtns[i].addEventListener("click", function () {
+    customerBtns[i].addEventListener("click", ()=> {
         let current = document.getElementsByClassName("active");
         if (current.length === 0) {
             this.className += " active";
@@ -26,6 +26,7 @@ for (let i = 0; i < removeCustomerBtns.length; i++) {
 }
 
 // Set up datatable
+// limit entries to batches of 25
 $(document).ready(function () {
     $('#example').DataTable({
         "lengthMenu":[25]
