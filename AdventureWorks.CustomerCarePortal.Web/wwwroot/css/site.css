@@ -54,3 +54,9 @@ table.dataTable thead .sorting_desc_disabled:before {
 #useless-select-sort{
     display:none;
 }
+
+#customer-details-main div.row,
+#order-details-main div.row{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
