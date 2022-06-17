@@ -1,0 +1,165 @@
+﻿@{
+
+    ViewData["Title"] = "Order Details";
+    var Modil = new { id = 100, fName = "john", lName = "public", email = "john.q.public@gmail.com", rewardLevel = "gold", addressNum = 6423, street = "wall St", city = "mobile", state = "AL", zip = "35126-1234", phoneNumber = "555-555-5555" };
+    var Shrt = new { desc = "blue shirt", category = "apparel", price = 45.99, discount = 3 };
+    var Pmp = new { desc = "Air Pump", category = "accessories", price = 54.23, discount = 0 };
+    var Chn = new { desc = "Bike Chain", category = "parts", price = 45.99, discount = 3 };
+    var Ordr = new { customer = Modil, orderDate = "1.28.2021", trackingNum = "32456241", orderNum = "2344-2344-1233", items = new List<object> { Shrt, Pmp, Chn } };
+}
+
+<div id="order-details-main">
+
+    <div class="row">
+        <div class="col-1 offset-7">
+            <h4><a href="#">Edit</a></h4>
+        </div>
+        <div class="col-1 offset-1">
+            <h4><a href="#">Cancel</a></h4>
+        </div>
+        <div class="col-1 offset-1 ">
+            <h4><a href="#">Return</a></h4>
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row py-3 border-bottom">
+        <div class="col-4">
+            @Modil.fName Q @Modil.lName
+        </div>
+        <div class="col-4">
+            @Ordr.orderDate
+        </div>
+        <div class="col-4">
+            @Ordr.orderNum
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row">
+        <div class="col-4">
+            <h3 class="text-primary">
+                Shipping
+            </h3>
+        </div>
+        <div class="col-4 offset-4">
+            <a href="#">@Ordr.trackingNum</a>
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row">
+        <div class="col-4">
+            @Ordr.customer.addressNum @Ordr.customer.street
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row pb-4 border-bottom">
+        <div class="col-2">
+            @Ordr.customer.city
+        </div>
+        <div class="col-2">
+            @Ordr.customer.state
+        </div>
+        <div class="col-3">
+            @Ordr.customer.zip
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row">
+        <div class="col-4">
+            <h3 class="text-primary">
+                Billing
+            </h3>
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row">
+        <div class="col-4">
+            @Ordr.customer.addressNum @Ordr.customer.street
+        </div>
+    </div>
+    <!--end row-->
+    <div class="row pb-4 mb-5 ">
+        <div class="col-2">
+            @Ordr.customer.city
+        </div>
+        <div class="col-2">
+            @Ordr.customer.state
+        </div>
+        <div class="col-3">
+            @Ordr.customer.zip
+        </div>
+    </div>
+    <!--end row-->
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            @for (var i = 0; i < 5; i++)
+            {
+                <div class="row py-1 ">
+                    <div class="col-2 pb-3 border-bottom">
+                       <a href="#" class="text-muted"> Bike Chain</a>
+                    </div>
+                    <div class="col-2 border-bottom">
+                        <a href="#" class="text-muted"> Parts </a>
+                    </div>
+                    <div class="col-2 border-bottom">
+                        $59.99
+                    </div>
+                    <div class="col-2 border-bottom">
+                        $57.99
+                    </div>
+                    <div class="col-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="dark" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                        </svg>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!--end row-->
+
+    <div class="row">
+        <div class="col-6 offset-2">
+            <div class="row pb-3 border-bottom">
+                <div class="col-4">
+                    Sub-Total
+                </div>
+                <div class="col-4 offset-4">
+                    $167.85
+                </div>
+            <!--endrow-->
+            </div>
+            <div class="row pb-3 border-bottom">
+                <div class="col-4">
+                    Tax
+                </div>
+                <div class="col-4 offset-4">
+                    $19.99
+                </div>
+            <!--endrow-->
+            </div>
+            <div class="row pb-3 border-bottom">
+                <div class="col-4">
+                    Shipping
+                </div>
+                <div class="col-4 offset-4">
+                    $19.99
+                </div>
+            <!--endrow-->
+            </div>
+            <div class="row pb-3 ">
+                <div class="col-4">
+                    <h6>Total </h6>
+                </div>
+                <div class="col-4 offset-4">
+                    <h6>$201.74</h6>
+                </div>
+            <!--endrow-->
+            </div>
+        </div>
+    <!--endrow-->
+    </div>
+
+    <!--end main-->
+</div>
