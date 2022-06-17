@@ -1,10 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Order Details";
-    var Modil = new { id = 100, fName = "john", lName = "public", email = "john.q.public@gmail.com", rewardLevel = "gold", addressNum = 6423, street = "wall St", city = "mobile", state = "AL", zip = "35126-1234", phoneNumber = "555-555-5555" };
+    var Modil = new { id = 100, fName = "john", lName = "public", email = "john.q.public@gmail.com", rewardLevel = "gold",
+                    addressNum = 6423, street = "wall St", city = "mobile", state = "AL", zip = "35126-1234", phoneNumber = "555-555-5555" };
     var Shrt = new { desc = "blue shirt", category = "apparel", price = 45.99, discount = 3 };
     var Pmp = new { desc = "Air Pump", category = "accessories", price = 54.23, discount = 0 };
     var Chn = new { desc = "Bike Chain", category = "parts", price = 45.99, discount = 3 };
-    var Ordr = new { customer = Modil, orderDate = "1.28.2021", trackingNum = "32456241", orderNum = "2344-2344-1233", items = new List<object> { Shrt, Pmp, Chn } };
+    var Ordr = new { customer = Modil, orderDate = "1.28.2021", trackingNum = "32456241", 
+                    orderNum = "2344-2344-1233", items = new List<object> { Shrt, Pmp, Chn } };
 }
 <div id="order-details-main">
     <div class="row">

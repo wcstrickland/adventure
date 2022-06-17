@@ -16,4 +16,12 @@
     <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\william.strickland\source\repos\AdventureWorks.CustomerCarePortal\AdventureWorks.CustomerCarePortal.Web\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\william.strickland\source\repos\AdventureWorks.CustomerCarePortal\AdventureWorks.CustomerCarePortal.Web\.editorconfig" />
+  </ItemGroup>
+
 </Project>
